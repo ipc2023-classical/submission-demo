@@ -37,22 +37,29 @@ Stage: run
 
 # The runscript is called whenever the container is used to solve an instance.
 %runscript
-    DOMAINFILE=$1
-    PROBLEMFILE=$2
-    PLANFILE=$3
+    DOMAINFILE="$1"
+    PROBLEMFILE="$2"
+    PLANFILE="$3"
 
     /fast-downward.py \
-        --plan-file $PLANFILE \
-        $DOMAINFILE \
-        $PROBLEMFILE \
-        --search "astar(lmcut())"
+        --plan-file "$PLANFILE" \
+        "$DOMAINFILE" \
+        "$PROBLEMFILE" \
+        --search "lazy(single(ff()))"
 
 ## Define meta data
 %labels
-Name        demo
-Description forward search with A* and the LM-cut heuristic (only for demo purposes)
-Authors     Florian Pommerening <florian.pommerening@unibas.ch>
+Name        demo-LazyFF
+Description forward lazy GBFS with FF heuristic (only for demo purposes)
+Authors     Florian Pommerening <florian.pommerening@unibas.ch>, Daniel Fišer <danfis@danfis.cz>
 License     GPL 3
-SupportsDerivedPredicates yes
-SupportsQuantifiedPreconditions no
-SupportsQuantifiedEffects no
+Tracks      satisficing, agile
+SupportsDerivedPredicates                       no
+SupportsUniversallyQuantifiedPreconditions      yes
+SupportsExistentiallyQuantifiedPreconditions    yes
+SupportsUniversallyQuantifiedEffects            yes
+SupportsNegativePreconditions                   yes
+SupportsEqualityPreconditions                   yes
+SupportsInequalityPreconditions                 yes
+SupportsConditionalEffects                      yes
+SupportsImplyPreconditions                      yes
