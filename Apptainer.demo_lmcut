@@ -49,14 +49,14 @@ Stage: run
 
 ## Define meta data
 %labels
-Name        demo-AstarLMCut
+Name        demo A* with LM-cut
 Description forward search with A* and the LM-cut heuristic (only for demo purposes)
 Authors     Florian Pommerening <florian.pommerening@unibas.ch>
 License     GPL 3
 Tracks      optimal
 SupportsDerivedPredicates                       no
 SupportsUniversallyQuantifiedPreconditions      yes
-SupportsExistentiallyQuantifiedPreconditions    yes
+SupportsExistentiallyQuantifiedPreconditions    partially, only quantification over static predicates (demo example of a description of partial support)
 SupportsUniversallyQuantifiedEffects            yes
 SupportsNegativePreconditions                   yes
 SupportsEqualityPreconditions                   yes
