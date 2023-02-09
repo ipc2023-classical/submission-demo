@@ -4,7 +4,8 @@ This repository is meant to showcase how to set up an entry for the IPC 2023.
 Note that in the root directory of the main branch, there is one Apptainer file
 (we could add more to build multiple entries from the same code base).
 
-The file `Apptainer.demo` defines an entry called `demo` and builds the planner
+The files `Apptainer.demo_ff` and `Apptainer.demo_lmcut` define entries called
+`demo_ff` and `demo_lmcut` and build the planners
 in two stages. Stage 1 is called `build` and is used to compile the planner. The
 `%files` section copies all files from the repository into the root directory of
 the image. Afterwards, the `%post` section installs build dependencies through
